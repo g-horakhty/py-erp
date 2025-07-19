@@ -74,11 +74,11 @@ uvicorn main:app --reload
 # Modo produção (2 workers)
 uvicorn main:app --workers 2 --host 0.0.0.0 --port 8000
 ```
+# 📝 Licença
+GNU AFFERO GENERAL PUBLIC LICENSE (AGPL-3.0)
 
 ### 👨💻 Autor
 Gabriel Horakhty
+
 ![GitHub](https://img.shields.io/badge/github-%2523121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![LinkedIn](https://img.shields.io/badge/linkedin-%25230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
-
-# 📝 Licença
-GNU AFFERO GENERAL PUBLIC LICENSE (AGPL-3.0)
