@@ -74,8 +74,9 @@ uvicorn main:app --reload
 # Modo produção (2 workers)
 uvicorn main:app --workers 2 --host 0.0.0.0 --port 8000
 ```
-# 📝 Licença
-GNU AFFERO GENERAL PUBLIC LICENSE (AGPL-3.0)
+## Licença
+
+Este projeto está licenciado sob a [GNU General Public License v3.0](LICENSE) - veja o arquivo `LICENSE` para detalhes.
 
 ### 👨💻 Autor
 Gabriel Horakhty
