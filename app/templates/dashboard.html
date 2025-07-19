@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block extra_css %}
+<link href="/static/css/dashboard.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Dashboard</h2>
+
+<div class="row">
+    <!-- Cartões de Resumo -->
+    <div class="col-md-4 mb-4">
+        <div class="card text-white bg-primary h-100">
+            <div class="card-body">
+                <h5 class="card-title">Vendas Hoje</h5>
+                <h2 class="card-text">{{ vendas_hoje }}</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card text-white bg-success h-100">
+            <div class="card-body">
+                <h5 class="card-title">Total de Produtos</h5>
+                <h2 class="card-text">{{ total_produtos }}</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card text-white bg-info h-100">
+            <div class="card-body">
+                <h5 class="card-title">Total de Vendas</h5>
+                <h2 class="card-text">{{ total_vendas }}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5>Vendas Recentes</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="salesChart" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>Produtos Mais Vendidos</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="productsChart" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script>
+// Gráfico de vendas
+const salesCtx = document.getElementById('salesChart').getContext('2d');
+const salesChart = new Chart(salesCtx, {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+        datasets: [{
+            label: 'Vendas por Mês',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 2,
+            tension: 0.1
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            }
+        }
+    }
+});
+
+// Gráfico de produtos
+const productsCtx = document.getElementById('productsChart').getContext('2d');
+const productsChart = new Chart(productsCtx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Produto A', 'Produto B', 'Produto C', 'Produto D'],
+        datasets: [{
+            data: [300, 50, 100, 40],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'right',
+            }
+        }
+    }
+});
+</script>
+{% endblock %}
+{% endblock %}

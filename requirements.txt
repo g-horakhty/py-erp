@@ -1,0 +1,9 @@
+fastapi==0.95.2
+uvicorn==0.22.0
+sqlalchemy==2.0.15
+jinja2==3.1.2
+pdfkit==1.0.0
+python-escpos==2.2.0
+python-multipart==0.0.6
+plotly==5.15.0
+pandas==2.0.3

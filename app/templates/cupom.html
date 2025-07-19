@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cupom Fiscal - Venda #{{ venda.id }}</title>
+    <style>
+        body { font-family: monospace; font-size: 12px; width: 80mm; }
+        .header { text-align: center; font-weight: bold; }
+        .divider { border-top: 1px dashed #000; margin: 5px 0; }
+        .item { display: flex; justify-content: space-between; }
+        .total { font-weight: bold; text-align: right; }
+        .footer { text-align: center; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>LOJA XYZ</h2>
+        <p>Rua Exemplo, 123 - Centro</p>
+        <p>CNPJ: 12.345.678/0001-99</p>
+        <p>IE: 123.456.789.111</p>
+        <p>--------------------------------</p>
+        <h3>CUPOM FISCAL</h3>
+        <p>Nº {{ venda.id }} - {{ venda.data.strftime('%d/%m/%Y %H:%M') }}</p>
+    </div>
+
+    <div class="divider"></div>
+    
+    <p>Cliente: {{ venda.cliente.nome or 'CONSUMIDOR FINAL' }}</p>
+    <p>CPF/CNPJ: {{ venda.cliente.cpf_cnpj or 'Não informado' }}</p>
+    
+    <div class="divider"></div>
+    
+    <h4>ITENS</h4>
+    {% for item in venda.itens %}
+    <div class="item">
+        <span>{{ item.quantidade }} x {{ item.produto.nome }}</span>
+        <span>R$ {{ "%.2f"|format(item.total) }}</span>
+    </div>
+    <p>R$ {{ "%.2f"|format(item.preco_unitario) }} un.</p>
+    {% endfor %}
+    
+    <div class="divider"></div>
+    
+    <div class="total">
+        <p>TOTAL: R$ {{ "%.2f"|format(venda.total) }}</p>
+        <p>Forma de Pagamento: {{ venda.forma_pagamento }}</p>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <div class="footer">
+        <p>OBRIGADO PELA PREFERÊNCIA!</p>
+        <p>Volte sempre</p>
+        <p>--------------------------------</p>
+        <p>Consulte seu cupom em nosso site</p>
+        <p>www.lojaxyz.com.br</p>
+    </div>
+</body>
+</html>

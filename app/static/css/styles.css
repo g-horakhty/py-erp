@@ -1,0 +1,62 @@
+:root {
+    --primary-color: #4e73df;
+    --secondary-color: #858796;
+    --success-color: #1cc88a;
+    --info-color: #36b9cc;
+    --warning-color: #f6c23e;
+    --danger-color: #e74a3b;
+    --light-color: #f8f9fc;
+    --dark-color: #5a5c69;
+}
+
+body {
+    background-color: #f8f9fc;
+    min-height: 100vh;
+}
+
+.card {
+    border: none;
+    border-radius: 0.35rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+    border-color: #2653d4;
+}
+
+/* Sidebar */
+.bg-dark {
+    background-color: #212529 !important;
+}
+
+/* Ícones */
+.bi {
+    font-size: 1rem;
+    vertical-align: text-bottom;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100% !important;
+        height: auto;
+        position: relative;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
