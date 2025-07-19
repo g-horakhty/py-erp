@@ -52,7 +52,7 @@ Pré-requisitos
 - Git (opcional)
 
 ### Instalação
-´´´
+´´´bash
 # Clone o repositório
 git clone https://github.com/g-horakhty/py-erp.git
 cd py-erp
