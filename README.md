@@ -26,16 +26,6 @@ Este software encontra-se em fase de desenvolvimento ativo, com funcionalidades 
 | 🛒 Módulo Vendas   | ⏳ Parcial   | Processo de vendas inicial        |
 | 👥 Módulo Clientes | ⏳ Parcial   | Cadastro de clientes básico       |
 
-## 🛠️ Arquitetura Técnica
-
-### 📌 Stack Atual
-```mermaid
-graph TD
-    A[FastAPI] --> B[SQLite]
-    A --> C[Uvicorn]
-    C --> D[HTTP Clients]
-
-
 ## 🔍 Análise de Estabilidade
 Pontos Fortes:
 
