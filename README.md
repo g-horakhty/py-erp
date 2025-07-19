@@ -52,7 +52,7 @@ Pré-requisitos
 - Git (opcional)
 
 ### Instalação
-´´´bash
+´´´sh
 # Clone o repositório
 git clone https://github.com/g-horakhty/py-erp.git
 cd py-erp
@@ -66,13 +66,13 @@ venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 ´´´
 ## Execução
-´´´bash
+´´´sh
 # Modo desenvolvimento (com reload)
 uvicorn main:app --reload
 
 # Modo produção (2 workers)
 uvicorn main:app --workers 2 --host 0.0.0.0 --port 8000
-´´´bash
+´´´
 
 ### 👨💻 Autor
 Gabriel Horakhty
