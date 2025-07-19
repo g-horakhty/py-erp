@@ -52,7 +52,7 @@ Pré-requisitos
 - Git (opcional)
 
 ### Instalação
-´´´bash
+´´´
 # Clone o repositório
 git clone https://github.com/g-horakhty/py-erp.git
 cd py-erp
@@ -64,7 +64,7 @@ venv\Scripts\activate     # Windows
 
 # Instale as dependências
 pip install -r requirements.txt
-´´´bash
+´´´
 ## Execução
 ´´´bash
 # Modo desenvolvimento (com reload)
